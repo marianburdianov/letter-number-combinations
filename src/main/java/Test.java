@@ -7,7 +7,7 @@ public class Test {
         letterNumberResource.getResource();
         String digits = "234";
         ResourceAnalyzer resourceAnalyzer = new ResourceAnalyzer(letterNumberResource, digits);
-        resourceAnalyzer.letterCombinations(digits);
+        resourceAnalyzer.letterCombinations();
 
     }
 }

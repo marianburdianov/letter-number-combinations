@@ -12,7 +12,7 @@ public class ResourceAnalyzer {
         this.digits = digits;
     }
 
-    public List<String> letterCombinations(String digits) {
+    public List<String> letterCombinations() {
         letterNumberResource = new LetterNumberResource();
         letterNumberResource.getResource();
 
