@@ -1,21 +1,21 @@
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 public class LetterNumberResource {
 
-    public Map<String, Set<String>> getResource() {
-        Map<String, Set<String>> resourceMap = new HashMap<>();
+    public Map<String, List<String>> getResource() {
+        Map<String, List<String>> resourceMap = new HashMap<>();
 
-        Set<String> abc = new HashSet<>();
-        Set<String> def = new HashSet<>();
-        Set<String> ghi = new HashSet<>();
-        Set<String> jkl = new HashSet<>();
-        Set<String> mno = new HashSet<>();
-        Set<String> pqrs = new HashSet<>();
-        Set<String> tuv = new HashSet<>();
-        Set<String> wxyz = new HashSet<>();
+        List<String> abc = new ArrayList<>();
+        List<String> def = new ArrayList<>();
+        List<String> ghi = new ArrayList<>();
+        List<String> jkl = new ArrayList<>();
+        List<String> mno = new ArrayList<>();
+        List<String> pqrs = new ArrayList<>();
+        List<String> tuv = new ArrayList<>();
+        List<String> wxyz = new ArrayList<>();
 
         abc.add("a");
         abc.add("b");
