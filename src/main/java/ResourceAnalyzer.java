@@ -1,32 +1,49 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 public class ResourceAnalyzer {
     private LetterNumberResource letterNumberResource;
+    private Operations operations;
     private String digits;
 
-    public ResourceAnalyzer(LetterNumberResource letterNumberResource, String digits) {
+    public ResourceAnalyzer(LetterNumberResource letterNumberResource, Operations operations, String digits) {
         this.letterNumberResource = letterNumberResource;
+        this.operations = operations;
         this.digits = digits;
     }
 
-    public List<String> letterCombinations() {
-        letterNumberResource = new LetterNumberResource();
-        letterNumberResource.getResource();
+    public List<List<String>> getList() {
+        return operations.getSelectedListDependingOnEntryDigits(letterNumberResource.getResource(), digits);
+    }
 
-        List<List<String>> list = new ArrayList<>();
-        for (int i = 0; i < digits.length(); i++) {
-            for (Map.Entry<String, List<String>> entry : letterNumberResource.getResource().entrySet()) {
-                System.out.println(entry.getKey() + ":" + entry.getValue());
-                list.add(entry.getValue());
+    public List<String> getListOfLetterCombinations() {
+        List<String> combinedList = new ArrayList<>();
+        String combinedString = null;
+
+        if (getList().size() == 0) {
+
+            return combinedList;
+
+        } else if (getList().size() == 1) {
+
+            combinedList = getList().get(getList().size() - 1);
+
+            return combinedList;
+        }
+        for (int i = 0; i < getList().size(); i++) {
+
+            for (int j = 0; j < getList().get(i).size(); j++) {
+
+                for (int k = i + 1; k < getList().size(); k++) {
+
+                    for (int l = 0; l < getList().get(k).size(); l++) {
+
+                        combinedString = getList().get(i).get(j) + getList().get(k).get(l);
+                        combinedList.add(combinedString);
+                    }
+                }
             }
         }
-        System.out.println(list);
-        for(int i = 0; i < list.size(); i ++) {
-            System.out.println(list.get(i));
-        }
-        return null;
+        return combinedList;
     }
 }
