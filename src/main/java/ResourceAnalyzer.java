@@ -18,7 +18,6 @@ public class ResourceAnalyzer {
 
     public List<String> getListOfLetterCombinations() {
         List<String> combinedList = new ArrayList<>();
-        String combinedString = null;
 
         if (getList().size() == 0) {
 
@@ -38,7 +37,7 @@ public class ResourceAnalyzer {
 
                     for (int l = 0; l < getList().get(k).size(); l++) {
 
-                        combinedString = getList().get(i).get(j) + getList().get(k).get(l);
+                        String combinedString = getList().get(i).get(j) + getList().get(k).get(l);
                         combinedList.add(combinedString);
                     }
                 }

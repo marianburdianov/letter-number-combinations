@@ -9,13 +9,13 @@ public class Operations {
         List<List<String>> selectedList = new ArrayList<>();
 
         for (int i = 0; i < digits.length(); i++) {
-
-            for (Map.Entry<String, List<String>> entry : map.entrySet()) {
-                if (String.valueOf(digits.charAt(i)).equals(entry.getKey())) {
-
-                    selectedList.add(entry.getValue());
-                }
-            }
+            selectedList.add(map.get(String.valueOf(digits.charAt(i))));
+//            for (Map.Entry<String, List<String>> entry : map.entrySet()) {
+//                if (String.valueOf(digits.charAt(i)).equals(entry.getKey())) {
+//
+//                    selectedList.add(entry.getValue());
+//                }
+//            }
         }
 
         return selectedList;
